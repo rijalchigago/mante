@@ -1,0 +1,620 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #334155;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   ANIMATIONS
+=========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   LOGIN PAGE
+=========================================== */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background: #f8fafc;
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.login-box h2 {
+    margin: 10px 0;
+    color: #1e293b;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.login-box p {
+    color: #64748b;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #475569;
+    font-size: 14px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.login-box input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.info-login {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.error {
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border: 1px solid #fecaca;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* ==========================================
+   CONTAINER
+=========================================== */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 30px auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ==========================================
+   HEADER
+=========================================== */
+
+.header {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin {
+    font-weight: 600;
+    color: #475569;
+    font-size: 15px;
+}
+
+/* ==========================================
+   MENU
+=========================================== */
+
+.menu {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: white;
+    color: #475569;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.menu a:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.menu-active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.logout {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ef4444;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.logout:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* ==========================================
+   CARD
+=========================================== */
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #1e293b;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card form {
+    max-width: 650px;
+}
+
+.card label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #475569;
+    font-size: 14px;
+}
+
+.card input,
+.card select,
+.card textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.card input:focus,
+.card select:focus,
+.card textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.card textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.card .button {
+    max-width: 650px;
+    margin-top: 25px;
+}
+
+/* ==========================================
+   SUCCESS MESSAGE
+=========================================== */
+
+.success {
+    background: #f0fdf4;
+    color: #16a34a;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #bbf7d0;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* ==========================================
+   TABLE
+=========================================== */
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+th {
+    color: white;
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #475569;
+}
+
+tbody tr {
+    transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+.empty-data {
+    text-align: center;
+    padding: 40px 16px !important;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* ==========================================
+   STATUS BADGES
+=========================================== */
+
+.hadir,
+.izin,
+.sakit,
+.alpa {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.hadir {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.izin {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.sakit {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.alpa {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ==========================================
+   RESPONSIVE - TABLET
+=========================================== */
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header h2 {
+        font-size: 20px;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu a {
+        text-align: center;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+=========================================== */
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: 30px 25px;
+    }
+
+    .login-box h2 {
+        font-size: 20px;
+    }
+
+    .login-box input {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    .container {
+        width: 96%;
+        margin: 15px auto;
+    }
+
+    .header {
+        padding: 18px;
+    }
+
+    .header h2 {
+        font-size: 18px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .admin {
+        font-size: 14px;
+    }
+
+    .logout {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .menu a {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .card label {
+        font-size: 13px;
+    }
+
+    .card input,
+    .card select,
+    .card textarea {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .hadir,
+    .izin,
+    .sakit,
+    .alpa {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}
+
+/* ==========================================
+   SCROLLBAR CUSTOM
+=========================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ==========================================
+   SMOOTH SCROLL
+=========================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   TOUCH OPTIMIZATION
+=========================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    .button,
+    .menu a,
+    .logout {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .login-box input,
+    .card input,
+    .card select,
+    .card textarea {
+        font-size: 16px;
+    }
+}
